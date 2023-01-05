@@ -1,8 +1,9 @@
 name: Continuous Integration
 
 on:
-  pull_request:
-    types: [opened, edited, synchronize, reopened]
+  push:
+    branches:
+      - master
 
 jobs:
   ci:
