@@ -12,7 +12,6 @@
 
 <p align="center">
   <img src="https://badgen.net/github/commits/mesquini/suflex-challenge" alt="commits" />
-  <img src="https://coveralls.io/repos/github/mesquini/suflex-challenge/badge.svg?branch=master#9" alt="Coverage" />
 </p>
 
 ## Description
