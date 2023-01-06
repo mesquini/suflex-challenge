@@ -15,10 +15,13 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/product/due-date (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/product/due-date')
-      .expect(200)
-      .expect('Hello World!');
+  it('/ (GET)', () => {
+    const data = {
+      message: 'Suflex API - ' + `${process.env.NODE_ENV}`.toUpperCase(),
+      status: 'OK',
+      version: process.env.npm_package_version,
+    };
+
+    return request(app.getHttpServer()).get('/').expect(200).expect(data);
   });
 });

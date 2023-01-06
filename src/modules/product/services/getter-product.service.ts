@@ -5,6 +5,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { Product } from '@prisma/client';
 import { IProductDao } from '../domain/repositories/interfaces/iproduct.dao';
 import { IGetterProductService } from './interfaces/igetter-product.service';
+import { alphabeticalSort, dueDateSort } from '@common/helpers/sortArray';
 
 @Injectable()
 export class GetterProductService implements IGetterProductService {
@@ -18,9 +19,7 @@ export class GetterProductService implements IGetterProductService {
   ): Promise<PaginatedResult<Product>> {
     const products = await this.productDatabaseDao.listDueDateSort(options);
 
-    products.data = products.data.sort(
-      (a, b) => new Date(a.due_date).getTime() - new Date(b.due_date).getTime(),
-    );
+    products.data = dueDateSort(products.data);
 
     return products;
   }
@@ -32,7 +31,7 @@ export class GetterProductService implements IGetterProductService {
       options,
     );
 
-    products.data = products.data.sort((a, b) => a.name.localeCompare(b.name));
+    products.data = alphabeticalSort(products.data);
 
     return products;
   }

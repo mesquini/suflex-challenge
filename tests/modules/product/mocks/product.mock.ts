@@ -153,3 +153,23 @@ export const product1: PaginatedResult<Product> = {
     next: 61,
   },
 };
+
+export const product2 = {
+  data: [
+    {
+      id: '000d0501-670a-4990-89e3-2efe60b4a0b1',
+      name: 'maçunim',
+      due_date: '2023-01-07T00:00:00.000Z',
+      created_at: '2023-01-05T18:34:58.922Z',
+      updated_at: '2023-01-05T18:34:58.922Z',
+    },
+  ],
+  meta: {
+    total: 1227,
+    lastPage: 1227,
+    currentPage: 1,
+    perPage: 1,
+    prev: null,
+    next: 2,
+  },
+};

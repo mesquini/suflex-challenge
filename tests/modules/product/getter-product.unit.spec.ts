@@ -21,21 +21,18 @@ describe('Getter product', () => {
   });
 
   it('Should be return list alphabetical sort', async () => {
-    jest
-      .spyOn(productDaoMock, 'listAlphabeticalSort')
-      .mockResolvedValue(product1 as any);
+    productDaoMock.listAlphabeticalSort.mockResolvedValue(product1);
 
     const data = await getterProductService.listAlphabeticalSort({
       perPage: 20,
+      page: 1,
     });
 
     expect(data.data).toHaveLength(20);
   });
 
   it('Should be return list due date sort', async () => {
-    jest
-      .spyOn(productDaoMock, 'listDueDateSort')
-      .mockResolvedValue(product1 as any);
+    productDaoMock.listDueDateSort.mockResolvedValue(product1);
 
     await expect(getterProductService.listDueDateSort()).resolves.toEqual(
       product1,

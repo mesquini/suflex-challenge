@@ -7,14 +7,9 @@ module.exports = {
   },
   collectCoverageFrom: [
     'src/**/*.ts',
+    '!src/main.ts',
     '!src/common/**',
-    '!src/**/*.entity.ts',
     '!src/**/*.database.dao.ts',
-    '!src/**/*.dto.ts',
-    '!src/**/*.interfaces.ts',
-    '!src/**/*.interface.ts',
-    '!src/**/*.errors.ts',
-    '!src/**/*.module.ts',
   ],
   coveragePathIgnorePatterns: [
     '/node_modules/',

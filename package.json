@@ -18,7 +18,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "npm run docker:up && npm run prisma:deploy && jest -i",
+    "test:e2e": "npm run docker:up && npm run prisma:deploy && jest -i -c jest-e2e.json",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
     "prisma:reset": "npx prisma migrate reset",
@@ -91,12 +91,7 @@
       "<rootDir>/tests"
     ],
     "collectCoverageFrom": [
-      "src/**/*.ts",
-      "!src/**/*.entity.ts",
-      "!src/**/*.dto.ts",
-      "!src/**/*.interfaces.ts",
-      "!src/**/*.errors.ts",
-      "!src/**/*.module.ts"
+      "src/**/*.ts"
     ],
     "moduleNameMapper": {
       "^@modules/(.*)$": "<rootDir>/src/modules/$1",
