@@ -26,13 +26,13 @@ This challenge consists of listing products in alphabetical order and according 
   GET /swagger
 ```
 
-#### Create one customer
+#### List sort products in due date
 
 ```http
   GET /product/due-date?page=1&perPage=10&dueDate=2
 ```
 
-#### Update one customer
+#### List sort products in alphabetical
 
 ```http
   GET /product/alphabetical?page=1&perPage=10
